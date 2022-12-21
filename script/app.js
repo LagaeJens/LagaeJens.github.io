@@ -206,8 +206,61 @@ const showCrewInfo3 = function (crew) {
     document.querySelector('.crewInfo').innerHTML = htmlstring;
 }
 
+let drawchart = () => {
+    const ctx = document.getElementById('myChart');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
 
+let convertData = (data) => {
+    const counts = data.reduce((acc, launch) => {
+        const rocketType = launch.rocket.rocket_name;
+        if (rocketType in acc) {
+            acc[rocketType]++;
+        } else {
+            acc[rocketType] = 1;
+        }
+        return acc;
+    }, {});
+    console.log(counts);
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(counts),
+            datasets: [{
+                label: 'Number of launches',
+                data: Object.values(counts)
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
 
+}
 
 //get crew data from spaxeX API
 let getCrew = (crew) => {
@@ -281,15 +334,15 @@ let getLaunchpad = (pad) => {
     console.log(pad);
     handleData(`https://api.spacexdata.com/v4/launchpads/${pad}`, showLaunchpad, null, 'GET')
 
-
 }
+let getlaunches4Chart = () => {
+    handleData(`https://api.spacexdata.com/v3/launches`, convertData, null, 'GET')
+}
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
     getMission();
-    // listenToButton();
-    // listenToButton1();
-    // listenToButton2();
-    // listenToButton3();
-    // showCrewInfo();
-    // getLaunchpad();
-    // getCrew("5ebf1b7323a9a60006e03a7b");
+    getlaunches4Chart();
+    // drawchart();
 });
