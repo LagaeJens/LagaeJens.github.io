@@ -591,7 +591,7 @@ const listener2 = () => {
           fill="#5E2A41"
         />
       </svg>`;
-        button.classList.add('c-button--loading3');
+        button.classList.add('c-button--loading');
         /* make timer 2s */
         setTimeout(() => {
             button.innerHTML = name;
