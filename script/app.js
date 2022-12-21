@@ -117,13 +117,14 @@ const showCrewInfo = function (crew) {
 
 const showCrewInfo1 = function (crew) {
     console.log(crew);
+
     let htmlstring = "";
     htmlstring += `<article class="o-section o-section--xl">
                 <div class="o-layout o-layout--gutter-xl o-layout--justify-center o-layout--align-center">
                     <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
                         <figure class="u-mb-lg">
                             <picture>
-                                <img class="crewImage img" src="" alt="Picture" />
+                                <img class="crewImage img" src="${crew.image}" alt="Picture" />
                             </picture>
                         </figure>
                     </div>
@@ -150,7 +151,15 @@ const showCrewInfo1 = function (crew) {
 const showCrewInfo2 = function (crew) {
     console.log(crew);
     let htmlstring = "";
-    htmlstring = `
+    htmlstring = `<article class="o-section o-section--xl">
+                <div class="o-layout o-layout--gutter-xl o-layout--justify-center o-layout--align-center">
+                    <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
+                        <figure class="u-mb-lg">
+                            <picture>
+                                <img class="crewImage img" src="${crew.image}" alt="Picture" />
+                            </picture>
+                        </figure>
+                    </div>
                     <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
                         <div class="u-max-width-sm">
 
@@ -166,7 +175,8 @@ const showCrewInfo2 = function (crew) {
                             </ol>
                         </div>
                     </div>
-            </article>`
+            </article>
+                   `
     document.querySelector('.crewInfo').innerHTML = htmlstring;
 }
 
@@ -178,7 +188,7 @@ const showCrewInfo3 = function (crew) {
                     <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
                         <figure class="u-mb-lg">
                             <picture>
-                                <img class="crewImage img" src="${crew.}" alt="Picture" />
+                                <img class="crewImage img" src="${crew.image}" alt="Picture" />
                             </picture>
                         </figure>
                     </div>
