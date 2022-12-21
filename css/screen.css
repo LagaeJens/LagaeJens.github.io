@@ -742,6 +742,16 @@ more padding on the right to avoid overlap
     box-shadow: var(--button-active-boxShadow, 0);
 }
 
+.test {
+    width: 32px;
+    height: 32px;
+}
+
+.c-button--loading {
+    border-radius: 50%;
+    line-height: normal;
+}
+
 /*
     Component: Option list
 */
