@@ -102,7 +102,7 @@ const showCrewInfo = function (crew) {
                             <h2 class="crewName">${crew.name}</h2>
                             <ol class="c-lead c-lead--lg u-color-neutral-dark u-mb-lg">
                                 <ul>Agency: ${crew.agency}</ul>
-                                <ul href="${crew.wikipedia}" >Wikipedia </ul>
+                                <a href="${crew.wikipedia}"><ul ">Wikipedia</ul></a>
                                 <ul>test</ul>
                                 <ul>test2</ul>
                                 <ul>test</ul>
@@ -134,7 +134,7 @@ const showCrewInfo1 = function (crew) {
                             <h2 class="crewName">${crew.name}</h2>
                             <ol class="c-lead c-lead--lg u-color-neutral-dark u-mb-lg">
                                 <ul>Agency: ${crew.agency}</ul>
-                                <ul href="${crew.wikipedia}" >Wikipedia </ul>
+                                <a href="${crew.wikipedia}"><ul ">Wikipedia</ul></a>
                                 <ul>test</ul>
                                 <ul>test2</ul>
                                 <ul>test</ul>
@@ -166,7 +166,7 @@ const showCrewInfo2 = function (crew) {
                             <h2 class="crewName">${crew.name}</h2>
                             <ol class="c-lead c-lead--lg u-color-neutral-dark u-mb-lg">
                                 <ul>Agency: ${crew.agency}</ul>
-                                <ul href="${crew.wikipedia}" >Wikipedia </ul>
+                                <a href="${crew.wikipedia}"><ul ">Wikipedia</ul></a>
                                 <ul>test</ul>
                                 <ul>test2</ul>
                                 <ul>test</ul>
@@ -197,7 +197,7 @@ const showCrewInfo3 = function (crew) {
                             <h2 class="crewName">${crew.name}</h2>
                             <ol class="c-lead c-lead--lg u-color-neutral-dark u-mb-lg">
                                 <ul>Agency: ${crew.agency}</ul>
-                                <ul href="${crew.wikipedia}" >Wikipedia </ul>
+                                <a href="${crew.wikipedia}"><ul ">Wikipedia</ul></a>
                                 <ul>test</ul>
                                 <ul>test2</ul>
                                 <ul>test</ul>
