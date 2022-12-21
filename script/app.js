@@ -186,7 +186,7 @@ const showCrewInfo3 = function (crew) {
                             <ol class="c-lead c-lead--lg u-color-neutral-dark u-mb-lg">
                                 <ul>Agency: ${crew.agency}</ul>
                                 <a href="${crew.wikipedia}"><ul ">Wikipedia</ul></a>
-                                <ul>Missionstatus ${crew.status}</ul>
+                                <ul>Missionstatus: ${crew.status}</ul>
                             </ol>
                         </div>
                     </div>
