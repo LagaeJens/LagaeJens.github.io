@@ -1054,7 +1054,7 @@ more padding on the right to avoid overlap
     /* width: 500px;
     height: 500px; */
     /* background-color: black; */
-    transform: scale(2);
+    transform: scale(1.5);
     /* z-index: 1; */
 
 }
