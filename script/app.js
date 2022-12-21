@@ -92,7 +92,7 @@ const showCrewInfo = function (crew) {
                     <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
                         <figure class="u-mb-lg">
                             <picture>
-                                <img class="crewImage img" src="" alt="Picture" />
+                                <img class="crewImage img" src="${crew.image}" alt="Picture" />
                             </picture>
                         </figure>
                     </div>
