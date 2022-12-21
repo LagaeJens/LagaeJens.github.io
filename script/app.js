@@ -206,27 +206,6 @@ const showCrewInfo3 = function (crew) {
     document.querySelector('.crewInfo').innerHTML = htmlstring;
 }
 
-let drawchart = () => {
-    const ctx = document.getElementById('myChart');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-}
 
 let convertData = (data) => {
     const counts = data.reduce((acc, launch) => {
