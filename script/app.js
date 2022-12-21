@@ -92,8 +92,8 @@ const showCrewInfo = function (crew) {
                     <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
                         <figure class="u-mb-lg">
                             <picture>
-                            <input class="c-input-picture o-hide-accessible" type="checkbox" id="checkbox2">
-                                <label class="c-label" for="checkbox2">
+                            <input class="c-input-picture o-hide-accessible" type="checkbox" id="checkbox3">
+                                <label class="c-label" for="checkbox3">
                                 <img class="crewImage img" src="${crew.image}" alt="Picture" />
                                 </label>
                                 </picture>
@@ -123,8 +123,8 @@ const showCrewInfo1 = function (crew) {
                     <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
                         <figure class="u-mb-lg">
                             <picture>
-                            <input class="c-input-picture o-hide-accessible" type="checkbox" id="checkbox2">
-                                <label class="c-label" for="checkbox2">
+                            <input class="c-input-picture o-hide-accessible" type="checkbox" id="checkbox3">
+                                <label class="c-label" for="checkbox3">
                                 <img class="crewImage img" src="${crew.image}" alt="Picture" />
                                 </label>
                                 </picture>
@@ -154,8 +154,8 @@ const showCrewInfo2 = function (crew) {
                     <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
                         <figure class="u-mb-lg">
                             <picture>
-                            <input class="c-input-picture o-hide-accessible" type="checkbox" id="checkbox2">
-                                <label class="c-label" for="checkbox2">
+                            <input class="c-input-picture o-hide-accessible" type="checkbox" id="checkbox3">
+                                <label class="c-label" for="checkbox3">
                                 <img class="crewImage img" src="${crew.image}" alt="Picture" />
                                 </label>
                                 </picture>
@@ -184,8 +184,8 @@ const showCrewInfo3 = function (crew) {
                     <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
                         <figure class="u-mb-lg">
                             <picture>
-                            <input class="c-input-picture o-hide-accessible" type="checkbox" id="checkbox2">
-                                <label class="c-label" for="checkbox2">
+                            <input class="c-input-picture o-hide-accessible" type="checkbox" id="checkbox3">
+                                <label class="c-label" for="checkbox3">
                                 <img class="crewImage img" src="${crew.image}" alt="Picture" />
                                 </label>
                                 </picture>
