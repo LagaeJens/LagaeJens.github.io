@@ -321,7 +321,7 @@ const listener = () => {
     console.log('listener is running');
     let button = document.querySelector('.js-button');
     button.addEventListener('click', function () {
-        console.log('button is clicked');
+        console.log('button clicked');
         let name = button.innerHTML;
         button.innerHTML = `<svg class="test" width="512" height="512" enable-background="new 0 0 416.449 416.449" version="1.1" viewBox="0 0 416.45 416.45" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
         <path d="m399.76 16.699c10.12 37.84 8.67 78.13-4.34 115.28h-0.01l-110.93-110.93v-0.01c37.15-13.01 77.44-14.46 115.28-4.34z" fill="#FF7124" />
