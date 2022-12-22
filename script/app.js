@@ -231,6 +231,7 @@ let convertData = (data) => {
         label: 'Number of launches',
         data: Object.values(counts),
         backgroundColor: [
+          //werk
           'rgba(255, 99, 132, 0.8)',
           'rgba(54, 162, 235, 0.8)',
           'rgba(255, 206, 86, 0.8)'
