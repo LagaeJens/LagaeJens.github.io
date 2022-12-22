@@ -406,7 +406,7 @@ const listener = () => {
         button.classList.add('c-button--loading');
         /* make timer 2s */
         setTimeout(() => {
-            button.innerHTML = name;
+            button.innerHTML = "crewmate 1";
             button.classList.remove('c-button--loading');
         }, 2000);
     });
@@ -500,7 +500,7 @@ const listener1 = () => {
         button.classList.add('c-button--loading');
         /* make timer 2s */
         setTimeout(() => {
-            button.innerHTML = name;
+            button.innerHTML = "crewmate 2";
             button.classList.remove('c-button--loading');
         }, 2000);
     });
@@ -594,7 +594,7 @@ const listener2 = () => {
         button.classList.add('c-button--loading');
         /* make timer 2s */
         setTimeout(() => {
-            button.innerHTML = name;
+            button.innerHTML = "crewmate 3";
             button.classList.remove('c-button--loading');
         }, 2000);
     });
@@ -602,7 +602,7 @@ const listener2 = () => {
 
 const listener3 = () => {
     console.log('listener is running');
-    let button = document.querySelector('.js-button');
+    let button = document.querySelector('.js-button3');
     button.addEventListener('click', function () {
         console.log('button is clicked');
         let name = button.innerHTML;
@@ -689,7 +689,7 @@ const listener3 = () => {
         button.classList.add('c-button--loading');
         /* make timer 2s */
         setTimeout(() => {
-            button.innerHTML = name;
+            button.innerHTML = "crewmate 4";
             button.classList.remove('c-button--loading');
         }, 2000);
     });
