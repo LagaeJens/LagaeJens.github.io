@@ -1,10 +1,10 @@
 // ba99653571ea2c5b64fb3eabb3a367e0
 
 document.addEventListener('DOMContentLoaded', function () {
-    const API_KEY = 'ba99653571ea2c5b64fb3eabb3a367e0'; // Replace with your GNews API key
+    const TOTALY_NO_API_KEY = 'ba99653571ea2c5b64fb3eabb3a367e0'; // Replace with your GNews API key
     let category = 'general'; // Default category
 
-    const url = () => `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=us&max=10&apikey=${API_KEY}`;
+    const url = () => `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=us&max=10&apikey=${TOTALY_NO_API_KEY}`;
 
     const newsList = document.getElementById('newsList');
 
