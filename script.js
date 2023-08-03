@@ -1,68 +1,75 @@
 // ba99653571ea2c5b64fb3eabb3a367e0
 
 document.addEventListener('DOMContentLoaded', function () {
-    const TOTALY_NO_API_KEY = 'ba99653571ea2c5b64fb3eabb3a367e0'; // Replace with your GNews API key
-    let category = 'general'; // Default category
+    const dropdownCheckbox = document.getElementById('toggle');
+    const dropdownMenu = document.querySelector('nav ul');
+    const dropdownHeader = document.querySelector('nav h2');
 
-    const url = () => `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=us&max=10&apikey=${TOTALY_NO_API_KEY}`;
-
-    const newsList = document.getElementById('newsList');
-
-    function fetchNews() {
-        fetch(url())
-            .then(function (response) {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(function (data) {
-                if (!data || !data.articles || data.articles.length === 0) {
-                    throw new Error('Invalid or empty response data');
-                }
-
-                newsList.innerHTML = ''; // Clear previous articles
-
-                const articles = data.articles;
-                articles.forEach(article => {
-                    const articleDiv = document.createElement('div');
-                    articleDiv.classList.add('article');
-
-                    const articleLink = document.createElement('a');
-                    articleLink.href = article.url;
-                    articleLink.target = '_blank';
-                    articleLink.style.textDecoration = 'none';
-
-                    const title = document.createElement('h2');
-                    title.textContent = article.title;
-
-                    const description = document.createElement('p');
-                    description.textContent = article.description;
-
-                    const image = document.createElement('img');
-                    image.src = article.image;
-                    image.alt = article.title;
-
-                    articleLink.appendChild(title);
-                    articleDiv.appendChild(articleLink);
-                    articleDiv.appendChild(description);
-                    articleDiv.appendChild(image);
-
-                    newsList.appendChild(articleDiv);
-                });
-            })
-            .catch(function (error) {
-                console.error('Error fetching news:', error);
-            });
+    // Function to hide the dropdown
+    function hideDropdown() {
+        dropdownCheckbox.checked = false;
     }
 
-    // Event listener for the dropdown menu
-    const categorySelect = document.getElementById('categorySelect');
-    categorySelect.addEventListener('change', function () {
-        category = categorySelect.value;
-        fetchNews();
+    // Hide dropdown when clicked outside the dropdown or on the dropdown checkbox
+    document.addEventListener('click', function (event) {
+        if (!dropdownMenu.contains(event.target) && event.target !== dropdownCheckbox) {
+            hideDropdown();
+        }
     });
 
-    // Initial fetch of news
-    fetchNews();
+    // Stop click event propagation for the elements within the dropdown
+    dropdownMenu.addEventListener('click', function (event) {
+        event.stopPropagation();
+    });
+
+    // Event listener for clicking on a topic link in the dropdown
+    const navTopics = document.querySelectorAll('nav ul li a');
+
+    navTopics.forEach(topic => {
+        topic.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent the default anchor link behavior
+            hideDropdown(); // Close the dropdown when a topic is clicked
+            const selectedCategory = topic.innerText.toLowerCase();
+            displayNews(selectedCategory);
+        });
+    });
+
+    // Event listener for clicking on the dropdown header to open/close the dropdown
+    dropdownHeader.addEventListener('click', function () {
+        dropdownCheckbox.checked = !dropdownCheckbox.checked;
+    });
+
+    async function fetchNews(category) {
+        // The API key was removed for security purposes. Please add your GNews API key here.
+        const apiKey = 'ba99653571ea2c5b64fb3eabb3a367e0';
+        const url = `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=us&max=10&apikey=${apiKey}`;
+
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            return data.articles;
+        } catch (error) {
+            console.error('Error fetching news:', error);
+            return [];
+        }
+    }
+
+    async function displayNews(category) {
+        const newsList = document.getElementById('newsList');
+        const articles = await fetchNews(category);
+        const newsHTML = articles.map(article => `
+            <div class="article">
+                <h2>${article.title}</h2>
+                <img src="${article.image}" alt="${article.title}">
+                <p>${article.description}</p>
+                <a class="read-more" href="${article.url}" target="_blank" rel="noopener noreferrer">Read more</a>
+            </div>
+        `).join('');
+
+        newsList.innerHTML = newsHTML;
+    }
+
+    // Display news for the default selected category on page load
+    const defaultCategory = 'general';
+    displayNews(defaultCategory);
 });

@@ -4,77 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/test.css">
     <title>GNews API News</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
 
-        header {
-            background-color: #007BFF;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-
-        main {
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            grid-gap: 20px;
-        }
-
-        .article {
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: border-color 0.3s ease;
-        }
-
-        .article h2 {
-            margin: 0;
-            color: #007BFF;
-        }
-
-        .article p {
-            margin-top: 5px;
-        }
-
-        .article img {
-            max-width: 100%;
-            height: 100px;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
-
-        .article:hover {
-            border-color: #007BFF;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-    </style>
 </head>
 
 <body>
     <header>
-        <label for="categorySelect">Choose a topic:</label>
-        <select id="categorySelect">
-            <option value="general">General</option>
-            <option value="world">World</option>
-            <option value="nation">Nation</option>
-            <option value="business">Business</option>
-            <option value="technology">Technology</option>
-            <option value="entertainment">Entertainment</option>
-            <option value="sports">Sports</option>
-            <option value="science">Science</option>
-            <option value="health">Health</option>
-        </select>
+        <h1>GNews API News</h1>
+        <div class="container">
+            <nav>
+                <!-- Dropdown toggle element with ID "toggle" -->
+                <input id="toggle" type="checkbox">
+                <h2>Choose a topic</h2>
+                <ul>
+                    <li><a>General</a></li>
+                    <li><a>World</a></li>
+                    <li><a>Nation</a></li>
+                    <li><a>Business</a></li>
+                    <li><a>Technology</a></li>
+                    <li><a>Entertainment</a></li>
+                    <li><a>Sports</a></li>
+                    <li><a>Science</a></li>
+                    <li><a>Health</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main id="newsList"></main>
+    <footer>
+        <div class="footer-content">
+            <div style="padding-right: 1rem;">MCT Howest</div>
+            <div style="padding-left: 1rem;">Jens Lagae</div>
+        </div>
+    </footer>
+    <!-- Your existing script.js file -->
     <script src="script.js"></script>
 </body>
 
