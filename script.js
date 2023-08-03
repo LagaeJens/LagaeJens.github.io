@@ -1,5 +1,3 @@
-// ba99653571ea2c5b64fb3eabb3a367e0
-
 document.addEventListener('DOMContentLoaded', function () {
     const dropdownCheckbox = document.getElementById('toggle');
     const dropdownMenu = document.querySelector('nav ul');
@@ -58,12 +56,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const newsList = document.getElementById('newsList');
         const articles = await fetchNews(category);
         const newsHTML = articles.map(article => `
-            <div class="article">
+            <a class="article" href="${article.url}" target="_blank" rel="noopener noreferrer">
                 <h2>${article.title}</h2>
-                <img src="${article.image}" alt="${article.title}">
                 <p>${article.description}</p>
-                <a class="read-more" href="${article.url}" target="_blank" rel="noopener noreferrer">Read more</a>
-            </div>
+                <img src="${article.image}" alt="${article.title}">
         `).join('');
 
         newsList.innerHTML = newsHTML;
