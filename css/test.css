@@ -1,3 +1,56 @@
+:root {
+    /* typography */
+    --global-root-font-size: 16;
+
+    /* colors */
+    --global-color-primary: #007BFF;
+    --global-color-secondary: #6C757D;
+    --global-color-success: #28A745;
+    --global-color-danger: #DC3545;
+    --global-color-warning: #FFC107;
+    --global-color-info: #17A2B8;
+    --global-color-light: #F8F9FA;
+    --global-color-dark: #343A40;
+    --global-color-white: #fff;
+    --global-color-black: #000;
+
+    /* spacing */
+    --global-spacing-xxs: 0.25rem;
+    --global-spacing-xs: 0.5rem;
+    --global-spacing-sm: 1rem;
+    --global-spacing-md: 1.5rem;
+    --global-spacing-lg: 2rem;
+    --global-spacing-xl: 3rem;
+    --global-spacing-xxl: 4rem;
+    --global-spacing-xxxl: 6rem;
+    --global-spacing-xxxxl: 8rem;
+    --global-spacing-xxxxxl: 12rem;
+    --global-spacing-xxxxxxl: 16rem;
+    --global-spacing-xxxxxxxl: 24rem;
+
+    /* border radius */
+    --global-border-radius-xxs: 0.125rem;
+    --global-border-radius-xs: 0.25rem;
+    --global-border-radius-sm: 0.5rem;
+    --global-border-radius-md: 1rem;
+    --global-border-radius-lg: 2rem;
+
+    /* border width */
+    --global-border-width-xxs: 0.0625rem;
+    --global-border-width-xs: 0.125rem;
+    --global-border-width-sm: 0.25rem;
+    --global-border-width-md: 0.5rem;
+    --global-border-width-lg: 1rem;
+    --global-border-width-xl: 2rem;
+
+
+
+    /* font size */
+    --global-font-size-xxs: 0.625rem;
+    --global-font-size-xs: 0.75rem;
+    --global-font-size-sm: 0.875rem;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,34 +59,38 @@ body {
 
 
 header {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px;
+    background-color: var(--global-color-primary);
+    color: var(--global-color-white);
+    padding: var(--global-font-size-sm);
     text-align: center;
+    /* make the 2 bottom corners rounded */
+    border-bottom-left-radius: var(--global-border-radius-md);
+    border-bottom-right-radius: var(--global-border-radius-md);
 }
 
 main {
-    padding: 20px;
+    padding: var(--global-spacing-md);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 20px;
+    grid-gap: var(--global-spacing-sm);
 }
 
 .a-footer {
     text-decoration: none;
 
-    color: #fff;
+    color: var(--global-color-white);
 }
 
 .article {
-    margin-bottom: 20px;
+    margin-bottom: var(--global-spacing-md);
     border: 1px solid #ccc;
-    padding: 10px;
+    padding: var(--global-spacing-lg);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: border-color 0.3s ease;
     text-decoration: none;
+    border-radius: var(--global-border-radius-sm);
 }
 
 .article a {
@@ -45,7 +102,7 @@ main {
 
 .article h2 {
     margin: 0;
-    color: #007BFF;
+    color: var(--global-color-primary);
 }
 
 .article p {
@@ -60,15 +117,17 @@ main {
 }
 
 .article:hover {
-    border-color: #007BFF;
+    border-color: var(--global-color-primary);
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 footer {
-    background-color: #007BFF;
-    color: #fff;
+    background-color: var(--global-color-primary);
+    color: var(--global-color-white);
     text-align: center;
     padding: 10px;
+    border-top-left-radius: var(--global-border-radius-sm);
+    border-top-right-radius: var(--global-border-radius-sm);
 }
 
 .footer-content {
@@ -87,9 +146,9 @@ nav {
 
 nav h2 {
     font-size: 1.5rem;
-    border-radius: 2px;
+    border-radius: var(--global-border-radius-md);
     position: relative;
-    background: tomato;
+    background: var(--global-color-info);
     height: 40px;
     text-transform: uppercase;
     margin-bottom: 0;
@@ -140,7 +199,7 @@ h2::before {
 }
 
 #toggle:focus~h2 {
-    background: mediumorchid;
+    background: var(--global-color-info);
     transition: background 0.45s;
 }
 
@@ -167,7 +226,8 @@ nav ul {
     padding-left: 0;
     padding-top: 1rem;
     margin-top: 0;
-    background: #ece5da;
+    /* background: var(--global-color-black); */
+    /* opacity: 0.01; */
     list-style: none;
     overflow: hidden;
     text-align: right;
@@ -178,13 +238,13 @@ nav ul {
 }
 
 nav ul li {
-    border-radius: 2px;
+    border-radius: var(--global-border-radius-md);
     position: relative;
     display: inline-block;
     line-height: 1.5;
     width: 100%;
     margin: 0 0 0.25rem 0;
-    background: tomato;
+    background: var(--global-color-white);
     transition: background 3s;
     box-shadow: 2px 2px 10px -2px rgba(0, 0, 0, 0.35);
 }
@@ -207,4 +267,6 @@ nav ul a {
     max-width: 55ch;
     margin: auto;
     color: #36454F;
+    /*all corners are rounded*/
+    border-radius: 10px;
 }
