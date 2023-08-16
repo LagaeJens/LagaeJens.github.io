@@ -13,28 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-
-
-    // // Function to hide the dropdown
-    // function hideDropdown() {
-    //     dropdownCheckbox.checked = false;
-    // }
-
-    // Event listener for keyboard navigation using the "Tab" key
-    dropdownHeader.addEventListener('keydown', function (event) {
-        if (event.key === 'Tab') {
-            if (dropdownCheckbox.checked) {
-                hideDropdown();
-            } else {
-                dropdownCheckbox.checked = true;
-                setTimeout(() => {
-                    dropdownMenu.querySelector('li:first-child button').focus();
-                }, 0);
-            }
-        }
-    });
-
-
     async function fetchNews(category) {
         // The API key was removed for security purposes. Please add your GNews API key here.
         const apiKey = 'ba99653571ea2c5b64fb3eabb3a367e0';
