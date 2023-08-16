@@ -20,26 +20,42 @@
         <div class="header-container">
             <h1>GNews API News</h1>
             <div class="container">
-                <nav>
-                    <!-- Dropdown toggle element with ID "toggle" -->
-                    <input id="toggle" type="checkbox">
-                    <h2>Choose a topic</h2>
-                    <ul>
-                        <li><a>General</a></li>
-                        <li><a>World</a></li>
-                        <li><a>Nation</a></li>
-                        <li><a>Business</a></li>
-                        <li><a>Technology</a></li>
-                        <li><a>Entertainment</a></li>
-                        <li><a>Sports</a></li>
-                        <li><a>Science</a></li>
-                        <li><a>Health</a></li>
-                    </ul>
+                <nav class="custom-select">
+                    <label for="Newstopic" class="select-label">Choose a topic:</label>
+                    <select name="Newstopic" id="Newstopic" class="custom-select">
+                        <option value="General">General</option>
+                        <option value="World">World</option>
+                        <option value="Nation">Nation</option>
+                        <option value="Business">Business</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Science">Science</option>
+                        <option value="Health">Health</option>
+                    </select>
                 </nav>
             </div>
         </div>
     </header>
-    <main id="newsList"></main>
+    <main id="newsList">
+
+    </main>
+    <a class="article o-section" href="${article.url}" target="_blank" rel="noopener noreferrer">
+        <h2>${article.title}</h2>
+        <p>${article.description}</p>
+        <img src="${article.image}" alt="${article.title}">
+        <p class="c-like">
+            <input class="o-hide-accessible c-like__input" type="checkbox" id="like" />
+            <label class="c-label c-like__label" for="like">
+                <svg class="c-like__symbol" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                    viewBox="0 0 510 510" style="enable-background: new 0 0 510 510" xml:space="preserve">
+                    <path
+                        d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55 C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z" />
+                </svg>
+            </label>
+        </p>
+    </a>
     <footer>
         <div class="footer-content">
             <div style="padding-right: 1rem;">

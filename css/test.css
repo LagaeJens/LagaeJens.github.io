@@ -3,10 +3,10 @@
     --global-root-font-size: 16;
 
     /* colors */
-    --global-color-primary: #007BFF;
+    --global-color-primary: #26ade4;
     --global-color-secondary: #6C757D;
     --global-color-success: #28A745;
-    --global-color-danger: #DC3545;
+    /* --global-color-danger: #DC3545; */
     --global-color-warning: #FFC107;
     --global-color-info: #17A2B8;
     --global-color-light: #F8F9FA;
@@ -81,6 +81,11 @@ main {
     color: var(--global-color-white);
 }
 
+.article:active {
+    color: var(--global-color-primary);
+}
+
+
 .article {
     margin-bottom: var(--global-spacing-md);
     border: 1px solid #ccc;
@@ -102,11 +107,12 @@ main {
 
 .article h2 {
     margin: 0;
-    color: var(--global-color-primary);
+    color: var(--global-color-black);
 }
 
 .article p {
     margin: 1rem 0;
+    color: var(--global-color-secondary);
 }
 
 .article img {
@@ -137,14 +143,53 @@ footer {
     padding-right: 1rem;
 }
 
-nav {
+/* nav {
     margin: auto;
     margin-top: 40px;
     position: relative;
     width: clamp(320px, 50vw, 100%);
+} */
+
+/* Styles for the combined label and select */
+.select-label {
+    font-size: var(--global-border-radius-md);
+    border-radius: var(--global-border-radius-md);
+    position: relative;
+    /* background: var(--global-color-info); */
+    height: 40px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    color: var(--global-color-light);
+    font-weight: 200;
+    display: flex;
+    flex: 1;
+    justify-content: left;
+    align-items: center;
+    /* box-shadow: 4px 4px 20px -2px rgba(0, 0, 0, 0.35); */
+    transition: all 0.4s;
+    position: relative;
 }
 
-nav h2 {
+.custom-select {
+    /* A reset of styles, including removing the default dropdown arrow */
+    appearance: none;
+    /* Additional resets for further consistency */
+    /* put text in the middle */
+    text-align-last: center;
+    /* background-color: transparent; */
+    border: none;
+    /* padding: 0 1em 0 0; */
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    line-height: inherit;
+    position: relative;
+}
+
+
+/* label {
     font-size: 1.5rem;
     border-radius: var(--global-border-radius-md);
     position: relative;
@@ -162,11 +207,24 @@ nav h2 {
     transition: all 0.4s;
 }
 
-nav:hover h2 {
+select {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+} */
+
+/* nav:hover h2 {
     transform: translateY(-2px);
     box-shadow: 2px 2px 5px -1px rgba(0, 0, 0, 0.35);
     transition: all 0.4s;
-}
+} */
 
 #toggle {
     position: absolute;
@@ -237,7 +295,7 @@ nav ul {
     position: absolute;
 }
 
-nav ul li {
+nav ul li button {
     border-radius: var(--global-border-radius-md);
     position: relative;
     display: inline-block;
@@ -249,8 +307,8 @@ nav ul li {
     box-shadow: 2px 2px 10px -2px rgba(0, 0, 0, 0.35);
 }
 
-nav ul li:hover,
-nav ul li a:focus {
+nav ul li button:hover,
+nav ul li a button:focus {
     background: mediumorchid;
     transition: background 0.45s;
 }
@@ -269,4 +327,49 @@ nav ul a {
     color: #36454F;
     /*all corners are rounded*/
     border-radius: 10px;
+}
+
+
+/* Like button */
+.c-like {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+
+}
+
+
+.c-like__symbol {
+    position: relative;
+    width: 24px;
+    fill: var(--global-color-secondary);
+    transform: scale(1);
+    transition: transform .5s cubic-bezier(0.175, 0.885, 0.32, 2.275);
+    will-change: transform;
+}
+
+.c-like__input:checked+.c-like__label .c-like__symbol {
+    transform: scale(1.1);
+    fill: #D80027;
+}
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.o-section {
+    position: relative;
 }
