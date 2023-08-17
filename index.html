@@ -7,18 +7,24 @@
     <link rel="stylesheet" href="css/test.css">
     <title>GNews API News</title>
     <script src="script.js"></script>
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
-    <link rel="icon" type="image/png" href="/favicon/favicon.png">
-
-    <style>
-        /* Your existing CSS styles here */
-    </style>
+    <link rel="icon" type="image/svg+xml" href="/favicon/newspaper_FILL0_wght400_GRAD0_opsz48.svg">
 </head>
 
 <body>
     <header>
         <div class="header-container">
-            <h1>GNews API News</h1>
+            <div class="h-logo">
+                <svg class="colored-svg" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="48"
+                    height="48">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
+                        <path
+                            d="M140-120q-24.75 0-42.375-17.625T80-180v-660l67 67 66-67 67 67 67-67 66 67 67-67 67 67 66-67 67 67 67-67 66 67 67-67v660q0 24.75-17.625 42.375T820-120H140Zm0-60h310v-280H140v280Zm370 0h310v-110H510v110Zm0-170h310v-110H510v110ZM140-520h680v-120H140v120Z">
+                        </path>
+                    </svg>
+                </svg>
+                <h1 class="h-logotext">GNews</h1>
+            </div>
             <div class="container">
                 <nav class="custom-select">
                     <label for="Newstopic" class="select-label">Choose a topic:</label>
@@ -40,7 +46,7 @@
     <main id="newsList">
 
     </main>
-    <a class="article o-section" href="${article.url}" target="_blank" rel="noopener noreferrer">
+    <!-- <a class="article o-section" href="${article.url}" target="_blank" rel="noopener noreferrer">
         <h2>${article.title}</h2>
         <p>${article.description}</p>
         <img src="${article.image}" alt="${article.title}">
@@ -55,7 +61,7 @@
                 </svg>
             </label>
         </p>
-    </a>
+    </a> -->
     <footer>
         <div class="footer-content">
             <div style="padding-right: 1rem;">

@@ -49,12 +49,16 @@
     --global-font-size-xxs: 0.625rem;
     --global-font-size-xs: 0.75rem;
     --global-font-size-sm: 0.875rem;
+    --global-font-size-md: 1rem;
+    --global-font-size-lg: 1.25rem;
+    --global-font-size-xl: 2rem;
 }
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f6f5f7;
 }
 
 
@@ -96,6 +100,7 @@ main {
     transition: border-color 0.3s ease;
     text-decoration: none;
     border-radius: var(--global-border-radius-sm);
+    background-color: var(--global-color-white);
 }
 
 .article a {
@@ -143,6 +148,13 @@ footer {
     padding-right: 1rem;
 }
 
+.colored-svg {
+    fill: var(--global-color-white);
+}
+
+
+
+
 /* nav {
     margin: auto;
     margin-top: 40px;
@@ -178,6 +190,7 @@ footer {
     text-align-last: center;
     /* background-color: transparent; */
     border: none;
+    border-radius: var(--global-border-radius-xs);
     /* padding: 0 1em 0 0; */
     margin: 0;
     width: 100%;
@@ -188,6 +201,16 @@ footer {
     position: relative;
 }
 
+
+.h-logo {
+    display: flex;
+    align-items: center;
+}
+
+.h-logotext {
+    margin-left: 1rem;
+    font-size: var(--global-font-size-xl);
+}
 
 /* label {
     font-size: 1.5rem;
